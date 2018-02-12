@@ -14,7 +14,7 @@ def get_urls(video_id):
 	urls = {}
 
 	with youtube_dl.YoutubeDL({}) as ydl:
-		result = ydl.extract_info('https://youtu.be/'+video_id, download=False)
+		result = ydl.extract_info('https://www.youtube.com/watch?v={}&hl=ru_RU'.format(video_id), download=False)
 		formats = result['formats']
 
 	for f in formats:
